@@ -1407,30 +1407,30 @@ function buildInsightCards(params){
     /* ── Polar / perpetual twilight / midnight sun ── */
     cards=[
       {icon:'🌙',heading:'The sky never signals it\'s time to sleep',
-       body:`In ${name}, it's still light outside when you get into bed at ${bt}. Your brain relies on falling light levels in the hours before sleep as the cue to start producing melatonin. When that signal never comes, melatonin is delayed and sleep tends to feel lighter and harder to settle into – even if you feel exhausted.`,
-       fixBold:'Create the signal your environment isn\'t sending.',
+       body:`In ${name}, it's still light outside when you get into bed at ${bt}. Your brain relies on falling light levels as the cue to start producing melatonin. When that signal never comes, melatonin is delayed so you find it harder to fall asleep – even if you feel exhausted.`,
+       fixBold:'Avoid light in the hours before bed.',
        fixRest:` Come inside well before ${bt} and close the curtains or blinds throughout your home. Use a sleep mask once you're in bed to block any remaining light. In summer in ${name}, darkness isn't something that happens to you – it's something you have to build.`},
-      {icon:'☀️',heading:'Morning light is your most powerful tool right now',
-       body:`When nights stay bright, your body clock loses its usual anchors. The single most reliable replacement is bright light at ${wt}. That signal – more than almost anything else – primes your brain for the day and strengthens the circadian rhythm that eventually makes it easier to fall asleep at ${bt} despite the brightness outside.`,
-       fixBold:`Get outside within 30 minutes of waking at ${wt}.`,
-       fixRest:` Even 10–15 minutes of outdoor light – not filtered through glass – is enough to set your clock for the day. Doing it consistently matters more than doing it occasionally. It's the one habit worth locking in above everything else.`}
+      {icon:'☀️',heading:'Morning light comes way before you\'re ready for it',
+       body:`When you wake up in a light room, melatonin dips and cortisol rises. This tells your body it's time to wake up even if it's only 3:00AM – making it harder to get back to sleep.`,
+       fixBold:'Get outside as soon as you\'re awake.',
+       fixRest:` 10–15 minutes of outdoor light at ${wt} each day will strengthen your circadian rhythm. It's a signal to your body that says, "this is when I wake up". And that consistency will make it easier to get to sleep at ${bt} each night.`}
     ];
 
   } else if(ovH<=0.017){
     /* ── Zero disruption ── */
     cards=[
       {icon:'🛡️',heading:'Your sleep schedule is naturally protected – for now',
-       body:`You wake up at ${wt}, which is before first light arrives at ${fl}. That means no summer light is reaching you during sleep – a rare position. But it's fragile: even a small shift in bedtime or wake time could push you into the disruption window.`,
-       fixBold:'Protect the routine that\'s protecting you.',
+       body:`You wake up at ${wt}, which is before first light arrives at ${fl}. That means no summer light is reaching you during sleep. But it's fragile: even a small shift in bedtime or wake time could push you into the disruption window.`,
+       fixBold:'Protect the routine that\'s protecting you',
        fixRest:` Avoid letting your ${bt} bedtime drift later as evenings get lighter. The extra daylight makes it easy to push back without noticing – and that could bring ${fl} right into your sleep window.`},
       {icon:'🌆',heading:'Evening light is still working against your body clock',
-       body:`Even though your sleep is protected, light lasts until ${ll} in ${name}. If you're near bright windows or outdoors in the evening, that late exposure creates a problem your body doesn't expect: a burst of bright light in the evening mimics a morning signal, effectively telling your brain the day is just beginning. Melatonin – which should be building toward ${bt} – gets pushed back.`,
-       fixBold:`Start dimming your environment at ${dimDownTime}.`,
-       fixRest:` Come inside before ${ll} and close the curtains. If you're outside in the evening, sunglasses or blue-light-blocking glasses can reduce the intensity of the signal reaching your brain. Then bring lights and screens down gradually – the goal is a slow fade, not a sudden switch from bright to dark.`},
+       body:`Even though your sleep is protected, last light in ${name} doesn't arrive until ${ll}. A burst of bright light that late mimics a morning signal to your brain, suppressing your body's natural production of melatonin.`,
+       fixBold:'Avoid light in the hours before bed.',
+       fixRest:` Come inside before ${ll} and close the curtains. If you're outside or getting lots of screen time in the evening, wear sunglasses or blue-light-blocking glasses to reduce light intensity.`},
       {icon:'💡',heading:'You\'re getting your strongest light at the worst time',
-       body:`If you spend the day mostly indoors in relatively dim light, your strongest light exposure often comes late – from windows, outdoor time or screens in the evening. That pattern gives your body a second morning signal at exactly the wrong time of day, delaying the melatonin that should be building toward ${bt}.`,
-       fixBold:'Flip the pattern: bright mornings, dim evenings.',
-       fixRest:` Get outside within an hour of waking at ${wt}, then start reducing light after ${dimDownTime}. Moving your strongest light exposure to the morning tells your body when the day actually starts.`}
+       body:`If you spend most of your day indoors in dim light, your strongest light exposure often comes when you head outside after work. That pattern gives your body a second morning signal at exactly the wrong time, delaying the melatonin that should be building toward ${bt}.`,
+       fixBold:'Flip the pattern: bright mornings, dim evenings',
+       fixRest:` Get outside within 10–15 minutes of waking, then start reducing light after ${dimDownTime}. Moving your strongest light exposure to the morning tells your body when the day actually starts.`}
     ];
 
   } else {
@@ -1447,29 +1447,29 @@ function buildInsightCards(params){
       {id:'P5',score:p5?9:-1,card:{
         icon:'↔️',
         heading:'Your body clock is being squeezed from both ends',
-        body:`In ${name}, you have ${fmtHLong(ovH)} of light disruption while you sleep. That delays when you fall asleep and pulls you toward wakefulness early. Going to bed while it's still light outside, then waking with morning light already in, leaves your body clock without a clear window to work with.`,
-        fixBold:'Take control at both ends.',
-        fixRest:` Come inside 60–90 minutes before bed and close the curtains throughout your home. Use a sleep mask from ${bt} through ${wt}. Without both, you're only solving half the problem.`}},
+        body:`In ${name}, you have ${fmtHLong(ovH)} of light disruption while you sleep – hitting you at both ends. Melatonin is delayed at night and cortisol is triggered too early in the morning, so your body clock doesn't have a clear window to work with.`,
+        fixBold:'Take control at both ends',
+        fixRest:` Come inside 60–90 minutes before bed and close all the curtains. Use a sleep mask from ${bt} through ${wt}. Without both, you're only solving half the problem.`}},
       {id:'PE',score:pe?8:-1,card:{
         icon:'🧠',
         heading:'Early light is cutting your sleep short – and it shows',
-        body:`First light in ${name} arrives at ${fl} – ${gDW} before your ${wt} alarm. During that window, your brain has already been nudged toward wakefulness, pulling you out of the deepest stretch of your night earlier than it should. That final stretch is your most REM-rich: the stage responsible for focus, memory consolidation and emotional regulation. Losing even 30–60 minutes of it regularly isn't just about feeling tired – the shortfall in mental sharpness compounds the longer it goes on.`,
-        fixBold:'Protect the final hours of your sleep.',
-        fixRest:` Blackout blinds help, but most let some light through at the edges. A sleep mask removes that variable entirely. If your schedule has any flexibility, shifting your sleep window earlier protects that final REM-rich stretch of the night – the stage most responsible for how sharp and emotionally steady you feel the next day.`}},
+        body:`First light in ${name} arrives at ${fl} – ${gDW} before your ${wt} alarm. When light wakes you up in those final hours, melatonin dips and cortisol rises. This cuts your early-morning REM sleep short, making it harder to focus the next day.`,
+        fixBold:'Protect the final hours of your sleep',
+        fixRest:` Blackout blinds help, but most let light through at the edges. A sleep mask removes that variable entirely. If your schedule has any flexibility, shift your sleep window earlier to protect those final REM-rich hours – and the focus that comes with them.`}},
       {id:'P1',score:p1?8:-1,card:{
         icon:'⏳',
-        heading:'Your brain doesn\'t have enough time to switch off before bed',
+        heading:'Your melatonin window is too short',
         body:(gapLastToBed!==null&&gapLastToBed<=0)
-          ?`Last light in ${name} doesn't arrive until ${ll} – which is after your ${bt} bedtime, meaning you're going to sleep while it's still light outside. Your brain needs at least 90 minutes of low light to build melatonin naturally. Right now, it's getting none before bed.`
-          :`For melatonin to build naturally, your brain needs at least 90 minutes of low light before sleep. In ${name}, last light arrives at ${ll} – giving you only ${darkMinutes} minutes of real darkness before your ${bt} bedtime. You may be getting into bed while your body is still running close to full alert.`,
-        fixBold:`Come inside and start dimming at ${dimDownTime}.`,
+          ?`Dim light melatonin onset (DLMO) is the time after sunset when your body produces melatonin. Your body needs around 90 minutes of DLMO for high-quality sleep, but right now it's getting none.`
+          :`Dim light melatonin onset (DLMO) is the time after sunset when your body produces melatonin. Your body needs around 90 minutes of DLMO for high-quality sleep, but you're only getting ${darkMinutes} minutes.`,
+        fixBold:`Come inside and start dimming at ${dimDownTime}`,
         fixRest:` Close the curtains and bring lights and screens down gradually from there. Don't wait until you're already in bed – your brain needs the transition, not just the destination.`}},
       {id:'PC',score:5,card:{
         icon:'📅',
-        heading:'Summer quietly makes your sleep schedule less consistent',
-        body:`Long light evenings expand the day – socially and psychologically. Dinners run later, evenings stretch on, and staying up past ${bt} stops feeling like a late night when it's still light outside. The problem is that irregular sleep timing – even by 30–45 minutes night to night – means your body clock never quite knows when to start preparing for sleep. That uncertainty weakens the natural build-up of sleepiness that should be pulling you toward ${bt}.`,
-        fixBold:'Treat your sleep timing like a standing commitment.',
-        fixRest:` Aim for the same bedtime and wake time within about 30 minutes – including weekends and social nights. The more consistent the pattern, the stronger the biological signal your body sends at ${bt} each evening.`}}
+        heading:'Watch out for social jetlag',
+        body:`During bright summer evenings, you naturally stay out later when seeing family and friends. But going to bed 1–2 hours after your usual bedtime is like jetlag for your body clock.`,
+        fixBold:'Stay consistent, even at the weekends',
+        fixRest:` Go to bed and wake up within the same 30-minute window each day. If you go to bed later, stick with your usual wake up time. Sleeping in only makes the next night harder.`}}
     ];
     cards=all.filter(c=>c.score>0).sort((a,b)=>b.score-a.score).map(c=>c.card);
   }
